@@ -1,0 +1,80 @@
+{% include 'header.html' %}
+Formulario para editar
+{% for pregunta in preguntas %}
+
+<form method="post" action="" enctype="multipart/form-data">
+
+    <div class="card">
+        <div class="card-header">
+            Editar pregunta
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Datos de la pregunta a modificar</h5>
+            <p class="card-text">
+
+                <div class="form-group">
+                    <label for="txtDocente">Nombre del docente:</label>
+                    <input id="txtDocente" value="{{pregunta[]}}" class="form-control" type="text" name="txtDocente">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtCategoria">Categoria de la pregunta:</label>
+                    <input id="txtCategoria" value="{{pregunta[]}}" class="form-control" type="text" name="txtCategoria">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtSubcategoria">Subcategoria de la pregunta</label>
+                    <input id="txtSubcategoria" value="{{pregunta[]}}" class="form-control" type="text" name="txtSubcategoria">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtPregunta">Pregunta:</label>
+                    <input id="txtPregunta" value="{{pregunta[]}}" class="form-control" type="text" name="txtPregunta">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtRespuestaCorrecta">Respuesta correcta:</label>
+                    <input id="txtRespuestaCorrecta" value="{{pregunta[]}}" class="form-control" type="text" name="txtRespuestaCorrecta">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtRespuestaIncorrecta1">Respuesta incorrecta:</label>
+                    <input id="txtRespuestaIncorrecta1" value="{{pregunta[]}}" class="form-control" type="text" name="txtRespuestaIncorrecta1">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtRespuestaIncorrecta2">Respuesta incorrecta:</label>
+                    <input id="txtRespuestaIncorrecta2" value="{{pregunta[]}}" class="form-control" type="text" name="txtRespuestaIncorrecta2">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtRespuestaIncorrecta3">Respuesta incorrecta:</label>
+                    <input id="txtRespuestaIncorrecta3" value="{{pregunta[]}}" class="form-control" type="text" name="txtRespuestaIncorrecta3">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtImagen">Imagen:</label>
+                    <img class="img-thumbnail" width="" src="">
+                    <input id="txtImagen" class="form-control" type="file" name="txtImagen">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtObservaciones">Observaciones:</label>
+                    <input id="txtObservaciones" value="{{pregunta[]}}" class="form-control" type="text" name="txtObservaciones">
+                </div>
+
+                <input type="hidden" value="{{pregunta[]}}" name="txtIDPregunta" id="txtIDPregunta">
+                <br>
+                
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Modificar">
+                    <a href="" class="btn btn-primary">Regresar</a>
+                </div>
+                                
+            </p>
+        </div>
+    </div>
+</form>
+
+{% endfor %}
+{% include 'footer.html' %}

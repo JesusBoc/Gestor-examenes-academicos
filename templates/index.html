@@ -1,0 +1,46 @@
+{% include 'header.html' %}
+<br/>
+<a href="" class="btn btn-success">Ingresar nueva pregunta</a>
+<br>
+<br>
+<table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Docente</th>
+                <th>Categoria</th>
+                <th>subcategoria</th>
+                <th>Pregunta</th>
+                <th>Respuesta A</th>
+                <th>Respuesta B</th>
+                <th>Respuesta C</th>
+                <th>Respuesta D</th>
+                <th>Imagen</th>
+                <th>Observaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pregunta in preguntas %}
+            <tr>
+                <td>{{pregunta[]}}</td>
+                <td>{{pregunta[]}}</td>
+                <td>{{pregunta[]}}</td>
+                <td>{{pregunta[]}}</td>
+                <td>{{pregunta[]}}</td>
+                <td>{{pregunta[]}}</td>
+                <td>{{pregunta[]}}</td>
+                <td>{{pregunta[]}}</td>
+                <td>{{pregunta[]}}</td>
+                <td><img class="img-thumbnail" width="" src=""></td>
+                <td>{{pregunta[]}}</td>
+                <td> 
+                    <a class="btn btn-warning" href="">Editar</a>
+                    | 
+                    <a onclick="return confirm('¿Desea borrar la pregunta?')" class="btn btn-danger" href="">Eliminar</a>
+                </td>
+            </tr>    
+            {% endfor %}
+            
+        </tbody>
+    </table>
+{% include 'footer.html' %}

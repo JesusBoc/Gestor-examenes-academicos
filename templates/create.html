@@ -1,0 +1,83 @@
+{% include 'header.html' %}
+
+{% with messages= get_flashed_messages() %}
+{% if messages %}
+    <div class="alert alert-danger" role="alert">
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}    
+    </div>
+{% endif %}
+{% endwith %}
+
+<form method="post" action="" enctype="multipart/form-data">
+    <br>
+    <div class="card">
+        <div class="card-header">
+            Ingresar Pregunta
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Datos de la pregunta</h5>
+            <p class="card-text">
+
+                <div class="form-group">
+                    <label for="txtDocente">Nombre del docente:</label>
+                    <input id="txtDocente" class="form-control" type="text" name="txtDocente">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtCategoria">Categoria de la pregunta:</label>
+                    <input id="txtCategoria" class="form-control" type="text" name="txtCategoria">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtSubcategoria">Subcategoria de la pregunta</label>
+                    <input id="txtSubcategoria" class="form-control" type="text" name="txtSubcategoria">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtPregunta">Pregunta:</label>
+                    <input id="txtPregunta" class="form-control" type="text" name="txtPregunta">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtRespuestaCorrecta">Respuesta correcta:</label>
+                    <input id="txtRespuestaCorrecta" class="form-control" type="text" name="txtRespuestaCorrecta">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtRespuestaIncorrecta1">Respuesta incorrecta:</label>
+                    <input id="txtRespuestaIncorrecta1" class="form-control" type="text" name="txtRespuestaIncorrecta1">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtRespuestaIncorrecta2">Respuesta incorrecta:</label>
+                    <input id="txtRespuestaIncorrecta2" class="form-control" type="text" name="txtRespuestaIncorrecta2">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtRespuestaIncorrecta3">Respuesta incorrecta:</label>
+                    <input id="txtRespuestaIncorrecta3" class="form-control" type="text" name="txtRespuestaIncorrecta3">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtImagen">Imagen:</label>
+                    <input id="txtImagen" class="form-control" type="file" name="txtImagen">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtObservaciones">Observaciones:</label>
+                    <input id="txtObservaciones" class="form-control" type="text" name="txtObservaciones">
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Agregar">
+                    <a href="" class="btn btn-primary">Regresar</a>
+                </div>
+
+            </p>
+        </div>
+    </div>
+
+</form>
+{% include 'footer.html' %}
