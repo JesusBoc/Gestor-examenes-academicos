@@ -1,42 +1,42 @@
 {% include 'header.html' %}
 <br/>
-<a href="" class="btn btn-success">Ingresar nueva pregunta</a>
+<a href="{{url_for('create')}}" class="btn btn-success">Ingresar nueva pregunta</a>
 <br>
 <br>
 <table class="table table-light">
         <thead class="thead-light">
             <tr>
                 <th>#</th>
-                <th>Docente</th>
                 <th>Categoria</th>
-                <th>subcategoria</th>
-                <th>Pregunta</th>
-                <th>Respuesta A</th>
-                <th>Respuesta B</th>
-                <th>Respuesta C</th>
-                <th>Respuesta D</th>
+                <th>Subcategoria</th>
+                <th>Docente</th>
+                <th>pregunta</th>
                 <th>Imagen</th>
+                <th>respuesta correcta</th>
+                <th>respuesta incorrecta</th>
+                <th>respuesta incorrecta</th>
+                <th>respuesta incorrecta</th>
                 <th>Observaciones</th>
             </tr>
         </thead>
         <tbody>
             {% for pregunta in preguntas %}
             <tr>
-                <td>{{pregunta[]}}</td>
-                <td>{{pregunta[]}}</td>
-                <td>{{pregunta[]}}</td>
-                <td>{{pregunta[]}}</td>
-                <td>{{pregunta[]}}</td>
-                <td>{{pregunta[]}}</td>
-                <td>{{pregunta[]}}</td>
-                <td>{{pregunta[]}}</td>
-                <td>{{pregunta[]}}</td>
-                <td><img class="img-thumbnail" width="" src=""></td>
-                <td>{{pregunta[]}}</td>
+                <td>{{pregunta[0]}}</td>
+                <td>{{pregunta[2]}}</td>
+                <td>{{pregunta[3]}}</td>
+                <td>{{pregunta[1]}}</td>
+                <td>{{pregunta[4]}}</td>
+                <td><img class="img-thumbnail" width="50" src="uploads/{{pregunta[9]}}"></td>
+                <td>{{pregunta[5]}}</td>
+                <td>{{pregunta[6]}}</td>
+                <td>{{pregunta[7]}}</td>
+                <td>{{pregunta[8]}}</td>
+                <td>{{pregunta[10]}}</td>
                 <td> 
-                    <a class="btn btn-warning" href="">Editar</a>
+                    <a class="btn btn-warning" href="/edit/{{pregunta[0]}}">Editar</a>
                     | 
-                    <a onclick="return confirm('¿Desea borrar la pregunta?')" class="btn btn-danger" href="">Eliminar</a>
+                    <a onclick="return confirm('¿Desea borrar la pregunta?')" class="btn btn-danger" href="/destroy/{{pregunta[0]}}">Eliminar</a>
                 </td>
             </tr>    
             {% endfor %}
